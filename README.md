@@ -1,24 +1,19 @@
-# README
+# Allthingsgamdev
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+All Things Game Dev is a content site featuring topics related to Game Development.
 
-Things you may want to cover:
+## Environment variables
 
-* Ruby version
+The following environment variables are required
 
-* System dependencies
+  * **GA_TOKEN** Google Analytics tracking code
+  * **CONTENTFUL_SPACE** Contentful space id
+  * **CONTENTFUL_TOKEN** Contentful access token
 
-* Configuration
+## Tests
 
-* Database creation
+Run the test suite
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+rails test
+```
