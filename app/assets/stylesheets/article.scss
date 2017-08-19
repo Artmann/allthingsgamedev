@@ -1,5 +1,36 @@
 .article {
-    h1, h2, h3, h4, h5 {
-        font-family: 'Roboto Condensed', sans-serif;    
+    padding-bottom: 2rem;
+
+    .feature-image {
+        height: 20rem;
+        @media #{$medium-and-up} {
+            height: 40rem;
+        }
+        margin-bottom: 2rem;
+    }
+
+    .content {
+        padding: 1rem;
+        h1 {
+            font-size: 2.8rem;
+            color: #333;
+        }
+        h2 {
+            font-size: 2.2rem;
+            color: #ad6e6e;
+        }
+
+        h3 {
+            font-size: 1.7rem;
+            color: #333;
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        font-size: 1.4rem;
+        color: #555;
     }
 }

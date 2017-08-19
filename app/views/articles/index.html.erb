@@ -1,7 +1,7 @@
 <div class="article-list row">
     <% @articles.each do |article| %>
 
-        <div class="col s12 article-card" style="background: url(<%= article.feature_image.url %>); background-size: cover;">
+        <div class="col s12 m3 article-card" style="background: url(<%= article.feature_image.url %>); background-size: cover;">
             <div class="overlay">
                 <%= link_to article.title, article_path(article.slug) %>
                 <%= raw markdown article.excerpt %>

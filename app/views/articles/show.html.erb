@@ -1,6 +1,10 @@
-<div class="article">
-    <h1><%= @article.title %></h1>
-    <div class="content">
-        <%= raw markdown @article.content %>
+<div class="article row">
+    <div class="col s12 feature-image" style="background: url(<%= @article.feature_image.url %>); background-size: cover;">
+    </div>
+    <div class="col s12 m6 offset-m3 content">
+        <h1><%= @article.title %></h1>
+        <div>
+          <%= raw markdown @article.content %>
+        </div>
     </div>
 </div>
