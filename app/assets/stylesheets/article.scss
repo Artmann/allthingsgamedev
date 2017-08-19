@@ -11,6 +11,9 @@
 
     .content {
         padding: 1rem;
+        font-size: 1.4rem;
+        color: #555;
+
         h1 {
             font-size: 2.8rem;
             color: #333;
@@ -30,8 +33,11 @@
             color: #333;
         }
 
-        font-size: 1.4rem;
-        color: #555;
+        img {
+           max-width: 80%;
+           margin: 4rem auto;
+           display: block; 
+        }
     }
 
     .comments {
