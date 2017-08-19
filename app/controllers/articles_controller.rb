@@ -8,5 +8,6 @@ class ArticlesController < ApplicationController
         # The id is really the slug
         slug = params[:id]
         @article = ContentService.new.find_article(slug)
+        @title = @article.title
     end
 end
