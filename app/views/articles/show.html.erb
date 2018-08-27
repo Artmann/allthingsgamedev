@@ -1,3 +1,17 @@
+<% content_for :custom_meta_tags do %>
+  <meta property="description" content="<%= @article.excerpt %>" />
+
+  <meta property="og:title" content="<%= @article.title %>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="<%= @article.excerpt %>" />
+  <meta property="og:image" content="<%= @article.feature_image.url %>" />
+
+  <meta property="twitter:title" content="<%= @article.title %>" />
+  <meta property="twitter:card" content="summary" />
+  <meta property="twitter:description" content="<%= @article.excerpt %>" />
+  <meta property="twitter:image" content="<%= @article.feature_image.url %>" />
+<% end %>
+
 <article class="article">
     <h1 class="article__title">
         <%= @article.title %>
