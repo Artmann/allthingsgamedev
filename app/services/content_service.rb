@@ -8,7 +8,7 @@ class ContentService
 
   # Returns a list of published articles
   def list_articles
-    @client.entries(content_type: :article)
+    @client.entries(content_type: :article).to_a
   end
 
   # Returns an article with the given slug

@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
 
     def index
         @articles = ContentService.new.list_articles
+        @featured_article = @articles.shift
     end
 
     def show

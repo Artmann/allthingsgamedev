@@ -3,9 +3,6 @@
 
     .feature-image {
         height: 20rem;
-        @media #{$medium-and-up} {
-            height: 40rem;
-        }
         margin-bottom: 2rem;
     }
 

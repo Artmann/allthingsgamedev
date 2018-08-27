@@ -2,7 +2,11 @@ nav {
   background: white;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
             0 2px 4px 0 rgba(0,0,0,0.08);
-  padding: .2rem 4rem;
+  padding: 1rem 1rem;
+
+  @media (min-width: 992px) {
+    padding: 1rem 4rem;
+  }
 
   .brand {
     color: #CE4642;

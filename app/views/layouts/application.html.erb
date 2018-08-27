@@ -20,8 +20,10 @@
       <%= link_to 'All Things GameDev', :root, class: 'brand' %>
     </nav>
 
-    <%= yield %>
-
+    <div class="container">
+      <%= yield %>
+    </div>
+    
     <footer>
       <%= link_to('https://www.contentful.com/', class: 'contentful-logo') do %>
         <%= image_tag('contentful.png') %>

@@ -1,16 +1,30 @@
-<div class="masonry-wrapper">
-    <div class="masonry">
-        <% @articles.each do |article| %>
-            <div
-                class="item"
-                style="background: url(<%= article.feature_image.url %>); background-size: cover;"
-            >
-                <div class="overlay">
-                    <%= link_to article.title, article_path(article.slug) %>
+<article class="featured-article">
+    <%= image_tag @featured_article.feature_image.url, alt: @featured_article.title, class: 'featured-article__image'  %>
+    <div class="featured-article__info">
+        <h2>
+            <%= link_to @featured_article.title, article_path(@featured_article.slug), class: 'featured-article__title' %>
+        </h2>
+        <div class="featured-article__excerpt">
+            <%= raw markdown @featured_article.excerpt %>
+        </div>
+    </div>
+</article>
+
+<div class="article-list">
+    <% @articles.each do |article| %>
+
+        <article class="article-item">
+            <div class="article-item__image" style="background: url('<%= article.feature_image.url %>')">
+            </div>
+            <div class="article-item__info">
+                <h2>
+                    <%= link_to article.title, article_path(article.slug), class: 'article-item__title' %>
+                </h2>
+                <div class="article-item__excerpt">
                     <%= raw markdown article.excerpt %>
                 </div>
             </div>
+        </article>
 
-        <% end %>
-    </div>
+    <% end %>
 </div>
