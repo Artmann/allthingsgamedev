@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
 
     def index
-        @articles = ContentService.new.list_articles
+        @articles = ContentService.new.list_articles.sort { |a, b| b.created_at <=> a.created_at }
         @featured_article = @articles.shift
     end
 
