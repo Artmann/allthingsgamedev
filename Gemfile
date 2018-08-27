@@ -17,7 +17,6 @@ gem 'coderay'
 gem 'redcarpet'
 gem 'contentful'
 gem 'jquery-rails'
-gem 'materialize-sass'
 
 group :production do
   gem 'pg'
