@@ -1,5 +1,5 @@
 .article {
-    line-height: 1.5;
+    line-height: 2;
     padding: 1rem 2rem;
 
     &__body {
@@ -31,11 +31,13 @@
         }
 
         h2 {
-            font-size: 1.25rem
+            font-size: 1.25rem;
+            line-height: 1.5;
         }
 
         h3 {
-            font-size: 1.1rem
+            font-size: 1.1rem;
+            line-height: 1.5;
         }
 
         img, iframe, video, code {
@@ -73,6 +75,7 @@
         color: #3D4852;
         display: block;
         font-size: 1.5rem;
+        line-height: 1.5;
         margin-bottom: 0rem;
         max-width: 100%;
 
