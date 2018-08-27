@@ -1,29 +1,41 @@
-<div class="article row">
-    <div class="feature-image col s12" style="background: url(<%= @article.feature_image.url %>); background-size: cover;">
+<article class="article">
+    <h1 class="article__title">
+        <%= @article.title %>
+    </h1>
+    <div class="article__meta">
+        <p><%= @article.created_at.strftime("%B %d, %Y") %></p>
     </div>
-    <div class="content col s12 m6 offset-m3">
-        <h1><%= @article.title %></h1>
-        <div>
-          <%= raw markdown @article.content %>
+    <div class="article__container">
+        <div class="article__body">
+            <%= image_tag @article.feature_image.url, alt: @article.title, class: 'article__image' %>
+
+            <div class="article__content">
+                <%= raw markdown @article.content %>
+            </div>
+
+            <div>
+                <div id="disqus_thread"></div>
+                <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                var disqus_config = function () {
+                    this.page.url = "<%= request.original_url %>";  // Replace PAGE_URL with your page's canonical URL variable
+                    this.page.identifier = "<%= @article.slug %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = '//artmann.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+
+        </div>
+        <div class="article__sidebar">
+
         </div>
     </div>
-    <div class="comments col s12 m6 offset-m3">
-        <div id="disqus_thread"></div>
-        <script>
-        /**
-        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-        var disqus_config = function () {
-            this.page.url = "<%= request.original_url %>";  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = "<%= @article.slug %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        (function() { // DON'T EDIT BELOW THIS LINE
-        var d = document, s = d.createElement('script');
-        s.src = '//artmann.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-        })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-</div>
+</article>

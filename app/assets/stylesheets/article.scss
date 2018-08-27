@@ -1,43 +1,83 @@
 .article {
-    padding-bottom: 2rem;
+    line-height: 1.5;
+    padding: 1rem 2rem;
 
-    .feature-image {
-        height: 20rem;
-        margin-bottom: 2rem;
+    &__body {
+        float: left;
+        width: 100%;
+
+        @media (min-width: 992px) {
+            width: 720px;
+            margin-right: 2rem;
+        }
+    }
+    &__container {
+        overflow: hidden;
+        width: 100%;
     }
 
-    .content {
-        padding: 1rem;
-        font-size: 1.4rem;
-        color: #555;
+    &__content {
+        color: #3D4852;
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        overflow: hidden;
 
-        h1 {
-            font-size: 2.8rem;
-            color: #333;
+        a {
+            color: #4DC0B5;
+            &:hover {
+                color: #38A89D;
+            }
+            text-decoration: none;
         }
+
         h2 {
-            font-size: 2.2rem;
-            color: #ad6e6e;
+            font-size: 1.25rem
         }
 
         h3 {
-            font-size: 1.7rem;
-            color: #333;
+            font-size: 1.1rem
         }
 
-        h4 {
-            font-size: 1.4rem;
-            color: #333;
-        }
-
-        img {
-           max-width: 80%;
-           margin: 4rem auto;
-           display: block; 
+        img, iframe, video, code {
+            display: block;
+            height: auto;
+            max-width: 100%;
         }
     }
 
-    .comments {
-        margin-top: 2rem;
+    &__image {
+        display: block;
+        height: auto;
+        max-width: 100%;
+    }
+    &__meta {
+        margin-bottom: 1rem;
+
+        p {
+            color: #606F7B;
+            font-size: 1rem;
+            margin-top: 0;
+        }
+    }
+    &__sidebar {
+        background: red;
+        display: none;
+        float: left;
+        width: 220px;
+
+        @media (min-width: 992px) {
+            display: block;
+        }
+    }
+    &__title {
+        color: #3D4852;
+        display: block;
+        font-size: 1.5rem;
+        margin-bottom: 0rem;
+        max-width: 100%;
+
+        @media (min-width: 992px) {
+            font-size: 2rem;
+        }
     }
 }
