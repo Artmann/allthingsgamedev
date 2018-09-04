@@ -1,6 +1,6 @@
 # Allthingsgamdev
 
-All Things Game Dev is a content site featuring topics related to Game Development.
+[All Things GameDev](https://allthingsgamedev.com) is a content site featuring topics related to Game Development.
 
 ## Environment variables
 
