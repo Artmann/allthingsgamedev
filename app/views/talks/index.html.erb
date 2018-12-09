@@ -1,0 +1,13 @@
+<div class="talks-list">
+  <% @talks.each do |talk| %>
+
+    <article class="talk-item">
+      <div class="talk-item__image" style="background-image: url('<%= talk.poster_url %>')">
+      </div>
+      <div class="talk-item__info">
+        <%= link_to talk.title, talk_path(talk.slug), class: 'talk-item__title' %>
+      </div>
+    </article>
+
+  <% end %>
+</div>

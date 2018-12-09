@@ -1,0 +1,35 @@
+.talk-item {
+  margin: 0 auto 3rem;
+  max-width: 425px;
+  width: 100%;
+
+  &__image {
+    background-size: cover;
+    background-position: 50% 50%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
+                0 2px 4px 0 rgba(0,0,0,0.08);
+    height: 14rem;
+    margin-bottom: .75rem;
+    width: 100%;
+  }
+
+  &__info {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  &__title {
+    color: #3D4852;
+    font-size: 1.25rem;
+    text-decoration: none;
+  }
+}
+
+.talks-list {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 2rem;
+  padding: 1.25rem;
+}
