@@ -1,5 +1,5 @@
 <article class="featured-article">
-    <%= image_tag @featured_article.feature_image.url, alt: @featured_article.title, class: 'featured-article__image'  %>
+    <%= image_tag @featured_article.image_url, alt: @featured_article.title, class: 'featured-article__image'  %>
     <div class="featured-article__info">
         <h2>
             <%= link_to @featured_article.title, article_path(@featured_article.slug), class: 'featured-article__title' %>
@@ -14,7 +14,7 @@
     <% @articles.each do |article| %>
 
         <article class="article-item">
-            <div class="article-item__image" style="background-image: url('<%= article.feature_image.url %>')">
+            <div class="article-item__image" style="background-image: url('<%= article.image_url %>')">
             </div>
             <div class="article-item__info">
                 <h2>

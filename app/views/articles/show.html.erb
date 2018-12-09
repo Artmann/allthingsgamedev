@@ -4,12 +4,12 @@
   <meta property="og:title" content="<%= @article.title %>" />
   <meta property="og:type" content="website" />
   <meta property="og:description" content="<%= @article.excerpt %>" />
-  <meta property="og:image" content="<%= @article.feature_image.url %>" />
+  <meta property="og:image" content="<%= @article.image_url %>" />
 
   <meta property="twitter:title" content="<%= @article.title %>" />
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:description" content="<%= @article.excerpt %>" />
-  <meta property="twitter:image" content="<%= @article.feature_image.url %>" />
+  <meta property="twitter:image" content="<%= @article.image_url %>" />
 <% end %>
 
 <article class="article">
@@ -21,7 +21,7 @@
     </div>
     <div class="article__container">
         <div class="article__body">
-            <%= image_tag @article.feature_image.url, alt: @article.title, class: 'article__image' %>
+            <%= image_tag @article.image_url, alt: @article.title, class: 'article__image' %>
 
             <div class="article__content">
                 <%= raw markdown @article.content %>
