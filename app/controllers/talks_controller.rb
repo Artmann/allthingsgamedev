@@ -7,7 +7,7 @@ class TalksController < ApplicationController
   def show
       # The id is really the slug
       slug = params[:id]
-      @article = ContentService.new.find_article(slug)
-      @title = @article.title
+      @talk = ContentService.new.find_talk(slug)
+      @title = @talk.title
   end
 end

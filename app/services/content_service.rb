@@ -25,12 +25,19 @@
     make_article @client.entries(content_type: :article, 'fields.slug': slug).first
   end
 
+  # Returns an talk with the given slug
+  def find_talk(slug)
+    make_talk @client.entries(content_type: :talk, 'fields.slug': slug).first
+  end
+
+
   private
   def make_article(a)
     Article.new a.title, a.slug, a.content, a.created_at, a.excerpt, (a.feature_image ? a.feature_image.url : nil)
   end
 
   def make_talk(t)
-    Talk.new t.title, t.slug, t.video_embed, "t.content", t.created_at
+    content = t.fields[:content] || ""
+    Talk.new t.title, t.slug, t.video_embed, content, t.created_at
   end
 end

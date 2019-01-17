@@ -1,0 +1,29 @@
+.talk {
+  color: #3D4852;
+  line-height: 2rem;
+
+  &__body {
+    color: #2b3031;
+    font-size: 1.25rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  &__title {
+    font-size: 1.25rem;
+    padding: 0rem 1rem;
+    margin: 0;
+  }
+  
+  &__video {
+    margin-bottom: 1rem;
+    width: 100%;
+
+    iframe {
+      @media (min-width: 992px) {
+        height: 38rem;
+      }
+      width: 100%;
+    }
+  }
+}
