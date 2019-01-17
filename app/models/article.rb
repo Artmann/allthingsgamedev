@@ -9,4 +9,15 @@ class Article
     self.slug = slug
     self.title = title
   end
+  
+  def to_json
+    {
+      content: content,
+      created_at: created_at,
+      excerpt: excerpt,
+      image_url: image_url,
+      slug: slug,
+      title: title
+    }.to_json
+  end
 end

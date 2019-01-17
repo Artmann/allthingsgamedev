@@ -1,9 +1,15 @@
-  class ContentService
+require 'singleton'
+
+class ContentService
+  include Singleton
+
   def initialize(client = nil)
     @client = client || Contentful::Client.new(
       access_token: ENV['CONTENTFUL_TOKEN'] || '', 
       space: ENV['CONTENTFUL_SPACE'] || ''
     ) 
+
+    @cache = ContentfulCache.new
   end
 
   # Returns a list of published articles
@@ -22,7 +28,18 @@
 
   # Returns an article with the given slug
   def find_article(slug)
-    make_article @client.entries(content_type: :article, 'fields.slug': slug).first
+    cached_article = @cache.get slug
+
+    if cached_article 
+      return make_article cached_article
+    end
+    
+    entry = @client.entries(content_type: :article, 'fields.slug': slug).first
+    article = make_article entry 
+
+    @cache.put slug, article.to_json
+
+    return article
   end
 
   # Returns an talk with the given slug
@@ -33,7 +50,8 @@
 
   private
   def make_article(a)
-    Article.new a.title, a.slug, a.content, a.created_at, a.excerpt, (a.feature_image ? a.feature_image.url : nil)
+    image_url = a.feature_image ? a.feature_image.url : a.image_url
+    Article.new a.title, a.slug, a.content, a.created_at.to_time, a.excerpt, image_url
   end
 
   def make_talk(t)
