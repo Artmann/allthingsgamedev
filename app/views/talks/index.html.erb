@@ -1,13 +1,13 @@
 <div class="talks-list">
   <% @talks.each do |talk| %>
 
-    <article class="talk-item">
+    <%= link_to talk_path(talk.slug), class: 'talk-item' do %>
       <div class="talk-item__image" style="background-image: url('<%= talk.poster_url %>')">
       </div>
       <div class="talk-item__info">
-        <%= link_to talk.title, talk_path(talk.slug), class: 'talk-item__title' %>
+        <h2 class="talk-item__title"><%= talk.title %></h2>
       </div>
-    </article>
+    <% end %>
 
   <% end %>
 </div>

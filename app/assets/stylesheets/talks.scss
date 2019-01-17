@@ -1,35 +1,39 @@
+$width: 20rem;
+
+
+$imageHeight: calc(#{$width} / (1280 / 720));
+
 .talk-item {
-  margin: 0 auto 3rem;
-  max-width: 425px;
-  width: 100%;
+  color: #3D4852;
+  display: block;
+  max-width: 100%;
+  text-decoration: none;
+  width: $width;
 
   &__image {
     background-size: cover;
     background-position: 50% 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
                 0 2px 4px 0 rgba(0,0,0,0.08);
-    height: 14rem;
+    height: $imageHeight;
     margin-bottom: .75rem;
     width: 100%;
   }
 
   &__info {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     width: 100%;
   }
 
   &__title {
-    color: #3D4852;
-    font-size: 1.25rem;
-    text-decoration: none;
+    font-size: 0.75rem;
+    overflow: hidden;
   }
 }
 
 .talks-list {
-  display: flex;
-  flex-wrap: wrap;
-  line-height: 2rem;
-  padding: 1.25rem;
+  widows: 100%;
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax($width, 1fr));
+  line-height: 1.5rem;
 }
