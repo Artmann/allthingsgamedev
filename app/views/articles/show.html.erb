@@ -24,7 +24,7 @@
             <%= image_tag @article.image_url, alt: @article.title, class: 'article__image' %>
 
             <div class="article__content">
-                <%= raw markdown @article.content %>
+                <%= raw @articleContent %>
             </div>
 
             <div>
