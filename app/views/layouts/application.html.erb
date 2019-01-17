@@ -2,7 +2,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Lato:400,700" rel="stylesheet">
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -41,7 +41,17 @@
   <body>
 
     <nav>
+      <i class="material-icons mobile-menu-button">menu</i>
       <%= link_to 'All Things GameDev', :root, class: 'brand' %>
+      <div class="nav__links">
+        <%= link_to 'Home', :root, class: 'nav__link' %>
+        <%= link_to 'Talks', :talks, class: 'nav__link' %>
+      </div>
+
+      <div class="mobile-menu">
+        <%= link_to 'Home', :root, class: 'nav__link' %>
+        <%= link_to 'Talks', :talks, class: 'nav__link' %>
+      </div>
     </nav>
 
     <div class="container">

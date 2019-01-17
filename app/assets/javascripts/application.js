@@ -13,3 +13,20 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener('turbolinks:load', function () {
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const menu = document.querySelector('.mobile-menu');
+
+  if (mobileMenuButton) {
+    [...menu.querySelectorAll('a')].forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('mobile-menu--active');
+      });
+    });
+
+    mobileMenuButton.addEventListener('click', function() { 
+      menu.classList.toggle('mobile-menu--active');
+    });
+  }
+});

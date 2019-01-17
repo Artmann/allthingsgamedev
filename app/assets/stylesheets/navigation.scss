@@ -1,19 +1,97 @@
+$backgroundColor: #607d8b;
+$borderColor: #546c78;
+$navHeight: 3rem;
+
 nav {
-  background: white;
+  align-items: center;
+  background: $backgroundColor;
+  border-bottom: solid 1px $borderColor;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.12),
             0 2px 4px 0 rgba(0,0,0,0.08);
-  padding: 1rem 1rem;
-
-  @media (min-width: 992px) {
-    padding: 1rem 4rem;
+  display: flex;
+  height: $navHeight;
+  justify-content: flex-start; 
+  padding: 0rem 1rem;
+  
+  @media #{$tablet} {
+    padding: 0rem 1.25rem;
+    justify-content: space-between; 
   }
 
   .brand {
-    color: #1C3D5A;
-    font-size: 1.5rem;
-    font-weight: bold;
+    color: #fff;
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 300;
     letter-spacing: .05rem;
     text-decoration: none;
     text-transform: uppercase;
+  
+    @media #{$tablet} {
+      font-size: 1.5rem;
+    }
+  }
+
+  .nav__links {
+    display: none;
+
+    @media #{$tablet} {
+      display: block;
+    }
+  }
+
+  .nav__link {
+    color: #fff;
+    font-size: 1rem;
+    margin: 0 0.5rem; 
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+
+    &:hover {
+      text-decoration: underline; 
+    }
+  }
+}
+
+.mobile-menu {
+  display: none;
+  background: $backgroundColor;
+  border-top: solid 1px $borderColor;
+  left: 0;
+  line-height: 2rem;
+  min-width: 10rem;
+  padding: 1rem;
+  position: fixed;
+  top: $navHeight;
+  z-index: 1000;
+
+  @media #{$tablet} {
+    display: none;
+  }
+
+  a {
+    display: block;
+    font-size: 1rem;
+    font-weight: 300;
+
+    &:hover {
+      text-decoration: underline; 
+    }
+  }
+
+  &--active {
+    display: block;
+  }
+}
+
+.mobile-menu-button {
+  color: #fff;
+  display: block;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+
+  @media #{$tablet} {
+    display: none;
   }
 }
