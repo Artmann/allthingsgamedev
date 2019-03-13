@@ -5,9 +5,9 @@ class ContentService
 
   def initialize(client = nil)
     @client = client || Contentful::Client.new(
-      access_token: ENV['CONTENTFUL_TOKEN'] || '', 
+      access_token: ENV['CONTENTFUL_TOKEN'] || '',
       space: ENV['CONTENTFUL_SPACE'] || ''
-    ) 
+    )
 
     @cache = ContentfulCache.new
   end
@@ -30,12 +30,12 @@ class ContentService
   def find_article(slug)
     cached_article = @cache.get slug
 
-    if cached_article 
+    if cached_article
       return make_article cached_article
     end
-    
+
     entry = @client.entries(content_type: :article, 'fields.slug': slug).first
-    article = make_article entry 
+    article = make_article entry
 
     @cache.put slug, article.to_json
 
@@ -46,7 +46,6 @@ class ContentService
   def find_talk(slug)
     make_talk @client.entries(content_type: :talk, 'fields.slug': slug).first
   end
-
 
   private
   def make_article(a)

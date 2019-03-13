@@ -9,7 +9,15 @@ class Article
     self.slug = slug
     self.title = title
   end
-  
+
+  def feature_image_url
+    if image_url.start_with?("//")
+      return "https:#{image_url}"
+    end
+
+    return image_url
+  end
+
   def to_json
     {
       content: content,
