@@ -14,11 +14,6 @@ class ArticlesController < ApplicationController
         renderer = Redcarpet::Markdown.new(CustomRender, fenced_code_blocks: true)
 
         doc = Nokogiri::HTML::DocumentFragment.parse(renderer.render(@article.content))
-        doc.css('code[@class]').each do |code|
-            div = CodeRay.scan(code.text.rstrip, code[:class].to_sym).div
-            code = code.replace(div)
-            code.first.parent.swap(code.first)
-        end
 
         ad_ids = [
             'div-gpt-ad-1547765304248-0',
@@ -31,7 +26,7 @@ class ArticlesController < ApplicationController
         doc.css('p').each do |block|
             word_count += (block.text || "").split(" ").size
 
-            if word_count >= 75
+            if word_count >= 150
                 id = ad_ids[index % ad_ids.size]
                 index += 1
 
