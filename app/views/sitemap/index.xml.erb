@@ -2,7 +2,7 @@
   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
       <loc><%= root_url %></loc>
-      <lastmod><%= @articles.first.updated_at.strftime("%Y-%m-%d") %></lastmod>
+      <lastmod><%= @articles.first.created_at.strftime("%Y-%m-%d") %></lastmod>
       <changefreq>monthly</changefreq>
       <priority>1</priority>
     </url>
@@ -10,7 +10,7 @@
     <% @articles.each do |article| %>
       <url>
         <loc><%= article_url(article.slug) %></loc>
-        <lastmod><%= article.updated_at.strftime("%Y-%m-%d") %></lastmod>
+        <lastmod><%= article.created_at.strftime("%Y-%m-%d") %></lastmod>
         <changefreq>monthly</changefreq>
         <priority>1</priority>
       </url>
