@@ -15,4 +15,14 @@
         <priority>1</priority>
       </url>
      <% end %>
+
+      <% @talks.each do |talk| %>
+      <url>
+        <loc><%= talk_url(talk.slug) %></loc>
+        <lastmod><%= talk.created_at.strftime("%Y-%m-%d") %></lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1</priority>
+      </url>
+     <% end %>
+    
   </urlset>
